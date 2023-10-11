@@ -1,0 +1,66 @@
+// compress: true
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+
+  .header_fade {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+    opacity: 0;
+    z-index: -1;
+    transition: .2s opacity linear;
+
+    &--active {
+      opacity: 0.7;
+      z-index: 0;
+    }
+  }
+}
+
+@media (max-width:720px) {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.no_scroll {
+  overflow: hidden;
+  // background: rgba(0, 0, 0, .2);
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0 !important;
+  padding: 0;
+}
+
+.container {
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 0 35px;
+
+  @media (max-width: 1200px) {
+    max-width: 1130px !important;
+    padding: 0 35px !important;
+  }
+}
+
+@import url('header/header.less');
+@import url('brands/brands.less');
+@import url('main/main.less');
+@import url('slider/slider.less');
+@import url('services/services.less');
+@import url('footer/footer.less');
+@import url('./var.less');

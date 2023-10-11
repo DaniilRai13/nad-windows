@@ -1,0 +1,177 @@
+//main: ../style.less
+
+.slider {
+    padding: 70px 0 30px;
+
+    @media @mobile-sm {
+        padding: 50px 0 70px;
+    }
+
+    .slider-title {
+        font-size: 38px;
+        text-align: center;
+        margin-bottom: 60px !important;
+        font-weight: 600;
+        // text-decoration: underline;
+        text-transform: uppercase;
+        opacity: .9;
+        color: #5b5b5b;
+
+        @media @mobile-sm {
+            font-size: 26px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width:320px) {
+            font-size: 22px;
+        }
+    }
+
+    .carousel {
+        padding-bottom: 80px;
+
+        @media (max-width: 900px) {
+            padding-bottom: 50px;
+        }
+
+        @media (max-width: 600px) {
+            padding-bottom: 30px;
+        }
+
+        .carousel-indicators {
+            margin: 0 !important;
+            bottom: 60px;
+
+            @media (max-width: 900px) {
+                bottom: 25px;
+            }
+
+            @media (max-width: 600px) {
+                bottom: 20px;
+            }
+
+            @media @mobile-sm {
+                bottom: -30px;
+            }
+
+            .carousel-indicators [data-bs-target] {
+                background-color: #000 !important;
+            }
+        }
+
+        .carousel-inner {
+            width: 80%;
+            margin: 0 auto;
+
+            @media (max-width: 700px) {
+                width: 100%;
+            }
+
+            .carousel-item {
+                img {
+                    margin: 0 auto;
+                }
+
+                .d-size {
+                    height: 450px;
+                    width: auto;
+
+                    @media (max-width: 900px) {
+                        height: 470px;
+                        width: auto;
+                    }
+
+                    @media (max-width: 600px) {
+                        height: 380px;
+                        width: auto;
+                    }
+
+                    @media @mobile-sm {
+                        height: 380px;
+                        width: auto;
+                    }
+
+                    @media (max-width:380px) {
+                        height: 300px;
+                        width: auto;
+                    }
+
+                    @media (max-width:320px) {
+                        height: 250px;
+                        width: auto;
+                    }
+                }
+
+                .carousel-caption {
+                    position: static !important;
+                    color: #000 !important;
+
+                    h5 {
+                        font-family: monospace;
+                        font-size: 25px;
+                        font-weight: 600;
+                        margin-bottom: 10px !important;
+
+                        @media (max-width: 600px) {
+                            font-size: 21px;
+                            font-weight: 600;
+                        }
+                    }
+
+                    p {
+                        font-family: initial;
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #333232;
+
+                        @media (max-width: 600px) {
+                            font-size: 16px;
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        .carousel-control-next {
+            @media (max-width: 600px) {
+                width: auto;
+                right: -15px;
+            }
+
+            @media @mobile-sm {
+                bottom: -93%;
+                right: 30%;
+            }
+
+            .carousel-control-next-icon {
+                @media @mobile-sm {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+        }
+
+        .carousel-control-prev {
+            @media (max-width: 600px) {
+                width: auto;
+                left: -15px;
+            }
+
+            @media @mobile-sm {
+                bottom: -93%;
+                left: 30%;
+            }
+
+            .carousel-control-prev-icon {
+                @media @mobile-sm {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+        }
+    }
+
+}
+
