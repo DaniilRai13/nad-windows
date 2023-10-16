@@ -27,6 +27,17 @@
             color: #fff;
             line-height: 60px;
 
+
+
+            transform: translate(0px, 120%);
+            opacity: 0;
+            transition: .6s all ease 0s;
+
+            &._active {
+                transform: translate(0px, 0px);
+                opacity: 1;
+            }
+
             @media @desktop {
                 font-size: 38px;
             }
@@ -90,6 +101,16 @@
                 height: 300px;
                 border-radius: 20px;
                 background-size: cover;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                transition: .2s filter linear;
+
+                @media (min-width: 950px) {
+                    filter: grayscale(1);
+
+                    &:hover {
+                        filter: grayscale(0)
+                    }
+                }
 
                 @media (max-width: 950px) {
                     height: 230px;
