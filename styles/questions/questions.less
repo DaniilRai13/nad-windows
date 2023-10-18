@@ -1,0 +1,184 @@
+//main: ../style.less
+@font-face {
+    font-family: 'Montserrant';
+    src: url('../../fonts/ofont.ru_Montserrat\ Alternates.ttf') format('ttf')
+}
+
+@font-face {
+    font-family: 'Zero';
+    src: url('../../fonts/ofont.ru_Zero\ 5.ttf') format('ttf')
+}
+
+.questions {
+    // background-color: #494d4e;
+
+    .questions__inner {
+        padding: 40px 0 100px 0;
+
+        .questions__title {
+            position: relative;
+            font-size: calc(@middleSize * 2);
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 600;
+            letter-spacing: 7px;
+
+            @media (min-width: 1600px) {
+                font-size: 42px;
+            }
+        }
+
+        .questions__items {
+            width: 80%;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+
+            @media @table-sm {
+                width: 85%;
+            }
+
+            .faq-card {
+                background-color: #fff;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transform: translate(-120%, 0);
+                opacity: 0;
+                transition: .7s transform ease, .5s opacity ease;
+
+                &._active {
+                    transform: translate(0, 0);
+                    opacity: 1;
+                }
+
+                &:nth-child(2n) {
+                    transform: translate(120%, 0);
+
+                    &._active {
+                        transform: translate(0, 0);
+                        opacity: 1;
+                    }
+                }
+
+                .faq-question {
+                    color: #333;
+                    font-size: calc(@middleSize * 0.8);
+                    font-weight: 600;
+                    padding: 20px;
+                    cursor: pointer;
+                    background-color: rgba(0, 0, 0, 0.02);
+                    transition: background-color 0.3s ease;
+
+                    @media (min-width: 1600px) {
+                        font-size: 24px;
+                    }
+
+                    @media @table-sm {
+                        font-size: calc(@middleSize * 0.9);
+                    }
+
+                    @media @mobile {
+                        padding: 13px;
+                    }
+
+                    /* Добавляем transition для плавного изменения цвета фона */
+                    &.active {
+                        background-color: #c7c7c7;
+                    }
+                }
+
+                .faq-answer {
+                    font-family: 'Zero', serif;
+                    color: #666;
+                    font-size: calc(@middleSize * 0.7);
+
+                    padding: 0 20px;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.3s ease, padding 0.3s ease;
+
+                    @media (min-width: 1600px) {
+                        font-size: 21px;
+                    }
+
+                    @media @table-sm {
+                        font-size: calc(@middleSize * 0.9);
+                    }
+
+                    @media @mobile {}
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+// .questions {
+//     // background-color: #494d4e;
+
+//     .questions__inner {
+//         padding: 40px 0 100px 0;
+
+//         .questions__title {
+//             position: relative;
+//             font-size: calc(@middleSize * 2);
+//             width: 80%;
+//             margin: 0 auto;
+//             text-align: center;
+//             margin-bottom: 40px;
+//             font-weight: 600;
+//             letter-spacing: 7px;
+//         }
+
+//         .questions__items {
+//             width: 80%;
+//             margin: 0 auto;
+
+//             .questions__item {
+//                 margin-bottom: 2px;
+//                 background: rgba(59, 59, 59, .8);
+
+//                 &:hover {
+//                     background: rgba(44, 44, 44, 0.9);
+//                 }
+
+//                 .item__title {
+//                     font-family: 'Zero', serif;
+//                     padding: 10px 15px;
+//                     letter-spacing: 2px;
+//                     color: aliceblue;
+//                     // text-transform: uppercase;
+//                     font-size: calc(@middleSize * 1.15);
+//                     cursor: pointer;
+//                     transition: .3s background ease;
+
+
+//                 }
+
+//                 .item__answer {
+//                     height: 0;
+//                     padding: 0;
+//                     overflow: hidden;
+//                     font-family: 'Montserrant', sans-serif;
+//                     font-size: calc(@middleSize * .8);
+//                     line-height: 1.2em;
+//                     letter-spacing: 2px;
+//                     transition: .3s overflaw ease;
+
+//                     &.active {
+//                         height: 100%;
+//                         overflow: visible;
+//                         padding: 20px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

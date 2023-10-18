@@ -56,6 +56,14 @@
         .services__item {
             width: 17%;
             text-align: center;
+            transform: translate(-120%, 0px);
+            opacity: 0;
+            transition: .5s all ease 0s;
+
+            &._active {
+                transform: translate(0px, 0px);
+                opacity: 1;
+            }
 
             // padding: 10px 8px;
             @media (max-width: 1000px) {
@@ -106,7 +114,6 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 100%;
                 height: 140px;
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 font-size: 22px;
@@ -115,6 +122,15 @@
                 background-color: #323232;
                 border-radius: 10px;
                 padding: 0 20px;
+
+                transform: translate(0, 100%);
+                opacity: 0;
+                transition: .5s all ease 0.3s;
+
+                &._active {
+                    transform: translate(0px, 0px);
+                    opacity: 1;
+                }
 
                 @media (max-width: 1000px) {
                     height: 120px;
