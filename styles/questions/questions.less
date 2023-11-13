@@ -13,7 +13,19 @@
     // background-color: #494d4e;
 
     .questions__inner {
-        padding: 40px 0 100px 0;
+        padding: 200px 0 100px 0;
+
+        @media @table {
+            padding: 70px 0 90px;
+        }
+
+        @media @table-sm {
+            padding: 100px 0 90px;
+        }
+
+        @media @mobile {
+            padding: 60px 0 70px;
+        }
 
         .questions__title {
             position: relative;
@@ -28,6 +40,11 @@
             @media (min-width: 1600px) {
                 font-size: 42px;
             }
+
+            @media @table {
+                font-size: calc(@middleSize * 3);
+                margin-bottom: 30px;
+            }
         }
 
         .questions__items {
@@ -37,7 +54,7 @@
             gap: 20px;
 
             @media @table-sm {
-                width: 85%;
+                width: 100%;
             }
 
             .faq-card {
@@ -46,8 +63,8 @@
                 border-radius: 10px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                 overflow: hidden;
-                transform: translate(-120%, 0);
-                opacity: 0;
+                // transform: translate(0, 120%);
+                opacity: 1;
                 transition: .7s transform ease, .5s opacity ease;
 
                 &._active {
@@ -55,18 +72,9 @@
                     opacity: 1;
                 }
 
-                &:nth-child(2n) {
-                    transform: translate(120%, 0);
-
-                    &._active {
-                        transform: translate(0, 0);
-                        opacity: 1;
-                    }
-                }
-
                 .faq-question {
                     color: #333;
-                    font-size: calc(@middleSize * 0.8);
+                    font-size: calc(@middleSize * 1);
                     font-weight: 600;
                     padding: 20px;
                     cursor: pointer;
@@ -78,11 +86,12 @@
                     }
 
                     @media @table-sm {
-                        font-size: calc(@middleSize * 0.9);
+                        font-size: calc(@middleSize * 1.3);
                     }
 
                     @media @mobile {
-                        padding: 13px;
+                        font-size: calc(@middleSize * 1.2);
+                        padding: 10px;
                     }
 
                     /* Добавляем transition для плавного изменения цвета фона */
@@ -94,7 +103,7 @@
                 .faq-answer {
                     font-family: 'Zero', serif;
                     color: #666;
-                    font-size: calc(@middleSize * 0.7);
+                    font-size: calc(@middleSize * 0.9);
 
                     padding: 0 20px;
                     max-height: 0;
@@ -106,10 +115,12 @@
                     }
 
                     @media @table-sm {
-                        font-size: calc(@middleSize * 0.9);
+                        font-size: calc(@middleSize * 1.1);
                     }
 
-                    @media @mobile {}
+                    @media @mobile {
+                        font-size: calc(@middleSize * 1.2);
+                    }
                 }
             }
         }

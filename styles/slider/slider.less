@@ -15,8 +15,15 @@
         font-weight: 600;
         // text-decoration: underline;
         text-transform: uppercase;
-        opacity: .9;
         color: #5b5b5b;
+        opacity: 0;
+        transform: translate(0, 120%);
+        transition: .7s transform ease, .5s opacity ease;
+
+        &._active {
+            opacity: .9;
+            transform: translate(0, 0);
+        }
 
         @media @mobile-sm {
             font-size: 26px;

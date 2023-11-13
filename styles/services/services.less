@@ -1,14 +1,18 @@
 //main: ../style.less
 
 .services {
-    padding: 85px 0 120px;
+    padding: 110px 0 250px;
 
-    @media (max-width: 600px) {
-        padding: 40px 0 60px;
+    @media @table {
+        padding: 100px 0 220px;
     }
 
-    @media (max-width: 450px) {
-        padding: 50px 0 50px;
+    @media @mobile {
+        padding: 40px 0 190px;
+    }
+
+    @media @mobile-sm {
+        padding: 50px 0 170px;
     }
 
     .services-title {
@@ -56,9 +60,14 @@
         .services__item {
             width: 17%;
             text-align: center;
+            background-color: #323232;
+            border-radius: 22px;
+            padding: 20px 0;
             transform: translate(-120%, 0px);
             opacity: 0;
+            box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.8);
             transition: .5s all ease 0s;
+
 
             &._active {
                 transform: translate(0px, 0px);
@@ -81,19 +90,19 @@
             @media (max-width: 500px) {
                 margin-right: 40px;
                 margin-left: 40px;
-                width: 45%;
+                width: 50%;
             }
 
             @media (max-width: 350px) {
                 margin-right: 0;
                 margin-left: 0;
-                width: 65%;
+                width: 75%;
             }
 
             svg {
                 height: 85px;
                 width: auto;
-                fill: #494d4e;
+                fill: #e5e5e5;
                 margin-bottom: 20px;
 
                 @media (max-width: 1000px) {
@@ -114,18 +123,16 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                height: 140px;
+                height: 60px;
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 font-size: 22px;
                 font-weight: 600;
                 color: #e5e5e5;
-                background-color: #323232;
-                border-radius: 10px;
                 padding: 0 20px;
-
+                line-height: 1.2em;
                 transform: translate(0, 100%);
                 opacity: 0;
-                transition: .5s all ease 0.3s;
+                transition: .5s all ease 0.2s;
 
                 &._active {
                     transform: translate(0px, 0px);
@@ -133,18 +140,19 @@
                 }
 
                 @media (max-width: 1000px) {
-                    height: 120px;
+                    height: 60px;
                     font-size: 20px;
                 }
 
                 @media (max-width: 600px) {
-                    height: 100px;
+                    height: 60px;
                     padding: 10px 8px;
                     font-size: 20px;
                 }
 
                 @media (max-width: 420px) {
-                    font-size: 16px;
+                    height: 40px;
+                    font-size: 18px;
                 }
 
             }
