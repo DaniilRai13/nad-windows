@@ -20,21 +20,24 @@
     <title>Продажа и установка пластиковых окон ПВХ | Минск</title>
     <link type="image/ico" href="./nad-logo.ico" rel="shortcut icon">
     <link type="Image/x-icon" href="./nad-logo.ico" rel="icon">
+    <link rel="icon" href="./nad-logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles/style.css?rnd=<?= rand(0, 999) ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <script src="./scripts/libs/gsap/gsap.min.js" defer></script>
-    <script src="./scripts/libs/gsap/ScrollSmoother.min.js" defer></script>
     <script src="./scripts/libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="./scripts/libs/gsap/ScrollSmoother.min.js" defer></script>
     <script src="scripts/animItems.js" defer></script>
     <script src="scripts/faq.js" defer></script>
+    <script src="scripts/contactForm.js" defer></script>
 
     <script src="./scripts/js.js" defer></script>
 
 </head>
 
 <body data-content="f">
+
     <header class="header header_fixed">
         <div class="container">
             <div class="header__inner">
@@ -42,12 +45,17 @@
                     <img class="logo__img" src="./img/logo.png" alt="">
                 </div>
                 <nav class="nav burger_no_active" data-content="close">
-                    <div class=" nav__inner" data-content="close">
-                        <a class="nav__link" href="#main" data-content="">Главная</a>
-                        <a class="nav__link" href="#slider" data-content="">Каталог</a>
-                        <a class="nav__link" href="#services" data-content="">Услуги</a>
-                        <a class="nav__link" href="#contacts" data-content="">Контакты</a>
+                    <div class="nav__inner" data-content="close">
+                        <a href="#main" class="nav__link" data-target="#main" data-stop-scroll="false"
+                            data-content="">Главная</a>
+                        <a href="#slider" class="nav__link" data-target="#slider" data-stop-scroll="false"
+                            data-content="">Каталог</a>
+                        <a href="#services" class="nav__link" data-target="#services" data-stop-scroll="false"
+                            data-content="">Услуги</a>
+                        <a href="#contacts" class="nav__link" data-target="#contacts" data-stop-scroll="false"
+                            data-content="">Контакты</a>
                     </div>
+                    <a class="contacts" data-target="#contacts">Связаться с нами</a>
                 </nav>
                 <div class="burger" data-content="close">
                     <svg class="burger-svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -72,316 +80,373 @@
             </div>
     </header>
 
-    <main id="main" class="main">
-        <div class="container">
-            <div class="main__inner">
-                <div class="main-title anim-items anim_no_hide">
-                    <text class="main__title__selected">Пластиковые окна</text> по оптовым ценам c установкой
-                </div>
-                <div class="main-images">
-                    <div class="main-images_item i-one"></div>
-                    <div class="main-images_item i-two"></div>
-                    <div class="main-images_item i-three"></div>
-                    <div class="main-images_item i-four"></div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <div id="slider" class="slider">
-        <div class="container">
-            <h1 class="slider-title">Виды оконных проемов</h1>
-            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
-                        aria-label="Slide 4"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="10000">
-                        <img src="./img/single-sash-window.png" class="d-block d-size" alt="...">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Одностворчатое окно</h5>
-                            <p>от 360BYN</p>
+    <div class="wrapper">
+        <div class="content">
+            <main id="main" class="main">
+                <div class="container">
+                    <div class="main__inner">
+                        <div class="main-title anim-items anim_no_hide">
+                            <mark>Пластиковые окна</mark> по оптовым ценам c установкой
                         </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="4000">
-                        <img src="./img/double-sash-window.png" class="d-block d-size" alt="...">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Двустворчатое окно</h5>
-                            <p>от 520BYN</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="4000">
-                        <img src="./img/tri-hung-window.png" class="d-block d-size" alt="...">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Трёхстворчатое окно</h5>
-                            <p>от 480BYN</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/window-unit.png" class="d-block d-size" alt="...">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Балконный блок</h5>
-                            <p>от 560BYN</p>
+                        <div class="main-images">
+                            <div class="main-images_item i-one"></div>
+                            <div class="main-images_item i-two"></div>
+                            <div class="main-images_item i-three"></div>
+                            <div class="main-images_item i-four"></div>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-    </div>
+            </main>
 
-    <section class="profiles">
-        <div class="container">
-            <div class="profiles-items">
-                <img src="img/kbe.png" alt="" class="item_img ">
-                <img src="img/salamander-logo.png" alt="" class="item_img">
-                <img src="img/rehau-logo.png" alt="" class="item_img">
-                <img src="img/brusBox-logo.png" alt="" class="item_img ">
-                <img src="img/roto.png" alt="" class="item_img ">
-            </div>
-        </div>
-    </section>
-
-    <div id="services" class="services">
-        <div class="container">
-            <div class="services-title">Предоставляемые услуги</div>
-            <div class="services__items">
-                <div class="services__item anim-items anim_no_hide">
-                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M120 50C120 36.215 108.785 25 95 25H85V20C85 11.73 78.27 5 70 5H60V15H70C72.76 15 75 17.245 75 20V85H10V65H0V95H10.185C10.065 95.825 10 96.655 10 97.5C10 107.15 17.85 115 27.5 115C37.15 115 45 107.15 45 97.5C45 96.655 44.935 95.825 44.815 95H75.185C75.065 95.825 75 96.655 75 97.5C75 107.15 82.85 115 92.5 115C102.15 115 110 107.15 110 97.5C110 96.655 109.935 95.825 109.815 95H120V50ZM35 97.5C35 101.635 31.635 105 27.5 105C23.365 105 20 101.635 20 97.5C20 96.555 20.185 95.72 20.455 95H34.55C34.82 95.72 35 96.555 35 97.5ZM95 35C103.27 35 110 41.73 110 50V55H85V35H95ZM100 97.5C100 101.635 96.635 105 92.5 105C88.365 105 85 101.635 85 97.5C85 96.555 85.185 95.72 85.455 95H99.55C99.82 95.72 100 96.555 100 97.5ZM85 85V65H110V85H85ZM50 15H0V5H50V15ZM40 35H0V25H40V35ZM30 55H0V45H30V55Z"
-                            fill="#494d4e" />
-                    </svg>
-                    <div class="services__item-text anim-items anim_no_hide">Быстрая доставка</div>
-                </div>
-                <div class="services__item anim-items anim_no_hide">
-                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M120 92.9289C120 98.2691 117.92 103.289 114.14 107.069L107.07 114.14C103.295 117.92 98.27 120 92.93 120C87.59 120 82.565 117.92 78.785 114.14L65.335 100.689C63.38 98.7341 63.38 95.574 65.335 93.6189C67.29 91.6638 70.45 91.6638 72.405 93.6189L85.855 107.069C89.635 110.85 96.22 110.85 100 107.069L107.07 99.9992C108.96 98.1091 110 95.599 110 92.9289C110 90.2588 108.96 87.7487 107.07 85.8586L97.415 76.1982L90.34 83.2685C88.385 85.2235 85.225 85.2235 83.27 83.2685C81.315 81.3134 81.315 78.1533 83.27 76.1982L93.88 65.5927C95.835 63.6377 98.995 63.6377 100.95 65.5927L114.14 78.7883C117.92 82.5634 120 87.5837 120 92.9289ZM19.31 54.6623C20.285 55.6373 21.565 56.1273 22.845 56.1273C24.125 56.1273 25.405 55.6373 26.38 54.6623C28.335 52.7072 28.335 49.5471 26.38 47.592L12.93 34.1414C11.04 32.2513 10 29.7412 10 27.0711C10 24.401 11.04 21.8909 12.93 20.0008L20 12.9305C23.78 9.15038 30.365 9.15038 34.145 12.9305L43.805 22.5909L36.73 29.6612C34.775 31.6163 34.775 34.7765 36.73 36.7315C38.685 38.6866 41.845 38.6866 43.8 36.7315L54.41 26.1261C55.35 25.186 55.875 23.921 55.875 22.5909C55.875 21.2609 55.35 19.9908 54.41 19.0558L41.215 5.86024C33.66 -1.70507 20.485 -1.70507 12.93 5.85524L5.86 12.9255C2.08 16.7057 0 21.7259 0 27.0661C0 32.4063 2.08 37.4316 5.86 41.2067L19.31 54.6623ZM114.625 31.3413L34.75 111.21C29.09 116.88 21.555 120 13.54 120H5C2.24 120 0 117.765 0 115V106.459C0 98.4441 3.12 90.9138 8.785 85.2486L88.655 5.37022C95.81 -1.78507 107.46 -1.79507 114.62 5.37022C121.775 12.5305 121.775 24.181 114.62 31.3363L114.625 31.3413ZM88.625 43.1968L76.8 31.3713L15.855 92.3189C12.08 96.099 10 101.119 10 106.459V110H13.54C18.885 110 23.905 107.919 27.68 104.139L88.63 43.1918L88.625 43.1968ZM107.55 12.4455C104.29 9.18538 98.99 9.19038 95.725 12.4455L83.87 24.301L95.695 36.1265L107.55 24.271C110.805 21.0109 110.805 15.7057 107.55 12.4455Z"
-                            fill="#494d4e" />
-                    </svg>
-
-                    <div class="services__item-text anim-items anim_no_hide">Работа замерщика</div>
-                </div>
-                <div class="services__item anim-items anim_no_hide">
-                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M91.0004 47.1339L93.2708 42.7636C95.1361 39.1633 95.4761 35.0679 94.2259 31.2126C92.9757 27.3573 90.2903 24.242 86.8548 22.5319L56.0549 5.44545C36.3218 -4.8104 21.4944 1.70014 14.4183 6.49054C11.4329 8.50571 9.78259 11.851 10.0026 15.4363C10.2177 18.9766 12.233 22.0568 15.3835 23.687L35.5067 34.5279L1.55129 98.3182C-2.06428 105.594 0.856181 114.555 8.06732 118.305C10.2377 119.435 12.593 120 14.9634 120C16.5287 120 18.1039 119.755 19.6391 119.255C23.4948 117.995 26.6152 115.3 28.3505 111.794L61.8908 48.7441L70.8772 53.5845C73.0426 54.6896 75.3579 55.2146 77.6483 55.2146C83.0792 55.2146 88.34 52.2594 91.0054 47.1389L91.0004 47.1339ZM19.4541 107.219C18.854 108.429 17.8189 109.324 16.5337 109.744C15.2435 110.164 13.8782 110.054 12.678 109.429C10.2777 108.184 9.30252 105.194 10.4427 102.894L44.313 39.2733L53.0844 43.9987L19.4541 107.219ZM84.3944 38.1532L82.129 42.5235C80.8638 44.9487 77.8433 45.9138 75.523 44.7187L20.0842 14.8612C20.0542 14.8462 20.0592 14.7862 20.0242 14.7712C23.7448 12.251 28.9056 9.98083 35.3716 9.98083C40.0274 9.98083 45.3582 11.1559 51.3242 14.2512L82.194 31.3726C83.3992 31.9777 84.2944 33.0128 84.7144 34.2979C85.1295 35.583 85.0195 36.9481 84.3944 38.1532ZM120 29.9875C120 32.7527 117.765 34.9879 114.999 34.9879H109.998C107.233 34.9879 104.998 32.7527 104.998 29.9875C104.998 27.2223 107.233 24.9871 109.998 24.9871H114.999C117.765 24.9871 120 27.2223 120 29.9875ZM100.262 66.9106C101.967 69.0858 101.587 72.221 99.4067 73.9262C98.4916 74.6462 97.4114 74.9912 96.3313 74.9912C94.846 74.9912 93.3758 74.3312 92.3906 73.0711L88.475 68.0707C86.7697 65.8955 87.1498 62.7602 89.3302 61.0551C91.5005 59.3449 94.641 59.73 96.3463 61.9102L100.262 66.9106ZM114.954 54.9446C114.034 56.5697 112.344 57.4898 110.594 57.4898C109.763 57.4898 108.918 57.2848 108.143 56.8447L103.702 54.3445C101.302 52.9894 100.447 49.9392 101.802 47.534C103.157 45.1388 106.203 44.2687 108.613 45.6338L113.054 48.134C115.454 49.4891 116.309 52.5394 114.954 54.9446Z"
-                            fill="#494d4e" />
-                    </svg>
-                    <div class="services__item-text anim-items anim_no_hide">Монтаж за 1 день</div>
-                </div>
-                <div class="services__item anim-items anim_no_hide">
-                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_125_6)">
-                            <path
-                                d="M60 120C26.915 120 0 93.085 0 60C0 26.915 26.915 0 60 0C93.085 0 120 26.915 120 60C120 93.085 93.085 120 60 120ZM60 10C32.43 10 10 32.43 10 60C10 87.57 32.43 110 60 110C87.57 110 110 87.57 110 60C110 32.43 87.57 10 60 10ZM84.11 51.71L79.065 43.075L65 51.29V25H55V68.71L84.11 51.71Z"
-                                fill="#494d4e" />
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_125_6">
-                                <rect width="120" height="120" fill="white" />
-                            </clipPath>
-                        </defs>
-                    </svg>
-                    <div class="services__item-text anim-items anim_no_hide">Быстрое изготовление</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="questions">
-        <div class="container">
-            <div class="questions__inner">
-                <div class="questions__title">FAQ</div>
-                <div class="questions__items">
-                    <div class="faq-card anim-items anim_no_hide">
-                        <div class="faq-question">Какие услуги предоставляет ваша компания по установке окон?</div>
-                        <div class="faq-answer">Наша компания предлагает полный спектр услуг, включая установку окон,
-                            демонтаж старых окон, регулировку оконных конструкций, установку откосов, подоконников,
-                            маскитных сеток и отливов.</div>
-                    </div>
-                    <div class="faq-card anim-items anim_no_hide">
-                        <div class="faq-question">Какие основные преимущества монтажа пластиковых окон?</div>
-                        <div class="faq-answer">Монтаж пластиковых окон обеспечивает улучшение тепло- и звукоизоляции
-                            помещения, снижение расходов на отопление и кондиционирование, а также повышение
-                            безопасности и защиты от взломов.</div>
-                    </div>
-                    <div class="faq-card anim-items anim_no_hide">
-                        <div class="faq-question">Какие гарантии вы предоставляете на выполненные работы?</div>
-                        <div class="faq-answer">Мы предоставляем гарантию на выполненные работы и используемые
-                            материалы. Длительность гарантии зависит от типа работ и выбранного оконного профиля. Наша
-                            цель - обеспечить клиентов качественными услугами и долговременной надежностью установленных
-                            окон.</div>
-                    </div>
-                    <div class="faq-card anim-items anim_no_hide">
-                        <div class="faq-question">Что такое фурнитура для окон и как выбрать подходящую?</div>
-                        <div class="faq-answer">Фурнитура для окон - это механизмы и комплектующие, обеспечивающие
-                            открывание, закрывание и блокировку окна. При выборе фурнитуры необходимо учитывать
-                            функциональность, качество и соответствие стандартам безопасности, а также удостовериться,
-                            что она совместима с выбранными оконными профилями. Наша компания специализаруется на
-                            установке ROTO фурнитуры.</div>
-                    </div>
-                    <div class="faq-card anim-items anim_no_hide">
-                        <div class="faq-question">Сколько времени обычно занимает монтаж окна?</div>
-                        <div class="faq-answer">Время монтажа окна зависит от сложности работы и размера оконного
-                            проема.
-                            В среднем, процесс монтажа одного окна может занять от 1 до 2 часов.</div>
-                    </div>
-                    <div class="faq-card anim-items anim_no_hide">
-                        <div class="faq-question">Какие факторы влияют на стоимость монтажа окна?</div>
-                        <div class="faq-answer">Стоимость монтажа окна зависит от размеров оконного проема, количества
-                            окон, выбранного типа оконных конструкций, условий работы (сложность доступа, подъем на
-                            веревках и т.д.) и других дополнительных услуг (установка подоконников, отделочные работы и
-                            т.д.).</div>
-                    </div>
-                    <!-- <div class="questions__item">
-                        <h2 class="item__title">Какие услуги предоставляет ваша компания по установке окон?</h2>
-                        <p class="item__answer">Наша компания предлагает полный спектр услуг, включая установку окон,
-                            демонтаж старых окон, регулировку оконных конструкций, установку откосов, подоконников,
-                            маскитных сеток и отливов.</p>
-                    </div>
-                    <div class="questions__item">
-                        <h2 class="item__title">Какие гарантии вы предоставляете на выполненные работы?</h2>
-                        <p class="item__answer">Мы предоставляем гарантию на выполненные работы и используемые
-                            материалы. Длительность гарантии зависит от типа работ и выбранного оконного профиля. Наша
-                            цель - обеспечить клиентов качественными услугами и долговременной надежностью установленных
-                            окон.</p>
-                    </div>
-                    <div class="questions__item">
-                        <h2 class="item__title">Какие основные преимущества монтажа пластиковых окон?</h2>
-                        <p class="item__answer">Монтаж пластиковых окон обеспечивает улучшение тепло- и звукоизоляции
-                            помещения, снижение расходов на отопление и кондиционирование, а также повышение
-                            безопасности и защиты от взломов.</p>
-                    </div>
-                    <div class="questions__item">
-                        <h2 class="item__title">Сколько времени обычно занимает монтаж окна?</h2>
-                        <p class="item__answer">Время монтажа окна зависит от сложности работы и размера оконного
-                            проема.
-                            В среднем, процесс монтажа одного окна может занять от 1 до 2 часов.</p>
-                    </div>
-                    <div class="questions__item">
-                        <h2 class="item__title">Какие факторы влияют на стоимость монтажа окна?</h2>
-                        <p class="item__answer">Стоимость монтажа окна зависит от размеров оконного проема, количества
-                            окон, выбранного типа оконных конструкций, условий работы (сложность доступа, подъем на
-                            веревках и т.д.) и других дополнительных услуг (установка подоконников, отделочные работы и
-                            т.д.).
-                        </p>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer id="contacts" class="footer">
-        <div class="container">
-            <div class="footer__inner">
-                <div class="footer__items">
-                    <div class="footer__info footer__info-contacts">
-                        <div class="footer__inner-title">Контакты</div>
-                        <div class="footer__inner-subtitle">
-                            <div class="sub subtitle_number">
-                                <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M3 5.5C3 14.0604 9.93959 21 18.5 21C18.8862 21 19.2691 20.9859 19.6483 20.9581C20.0834 20.9262 20.3009 20.9103 20.499 20.7963C20.663 20.7019 20.8185 20.5345 20.9007 20.364C21 20.1582 21 19.9181 21 19.438V16.6207C21 16.2169 21 16.015 20.9335 15.842C20.8749 15.6891 20.7795 15.553 20.6559 15.4456C20.516 15.324 20.3262 15.255 19.9468 15.117L16.74 13.9509C16.2985 13.7904 16.0777 13.7101 15.8683 13.7237C15.6836 13.7357 15.5059 13.7988 15.3549 13.9058C15.1837 14.0271 15.0629 14.2285 14.8212 14.6314L14 16C11.3501 14.7999 9.2019 12.6489 8 10L9.36863 9.17882C9.77145 8.93713 9.97286 8.81628 10.0942 8.64506C10.2012 8.49408 10.2643 8.31637 10.2763 8.1317C10.2899 7.92227 10.2096 7.70153 10.0491 7.26005L8.88299 4.05321C8.745 3.67376 8.67601 3.48403 8.55442 3.3441C8.44701 3.22049 8.31089 3.12515 8.15802 3.06645C7.98496 3 7.78308 3 7.37932 3H4.56201C4.08188 3 3.84181 3 3.63598 3.09925C3.4655 3.18146 3.29814 3.33701 3.2037 3.50103C3.08968 3.69907 3.07375 3.91662 3.04189 4.35173C3.01413 4.73086 3 5.11378 3 5.5Z"
-                                        stroke="#000000" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                                <h5>+375(33) 301-28-71</h5>
+            <div id="slider" class="slider">
+                <div class="container">
+                    <h1 class="slider-title anim-items anim_no_hide">Виды оконных проемов</h1>
+                    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="10000">
+                                <img src="./img/single-sash-window.png" class="d-block d-size" alt="...">
+                                <div class="carousel-caption d-md-block">
+                                    <h5>Одностворчатое окно</h5>
+                                    <p>от 360BYN</p>
+                                </div>
                             </div>
-                            <div class="sub subtitle_city">
-                                <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+                            <div class="carousel-item" data-bs-interval="4000">
+                                <img src="./img/double-sash-window.png" class="d-block d-size" alt="...">
+                                <div class="carousel-caption d-md-block">
+                                    <h5>Двустворчатое окно</h5>
+                                    <p>от 520BYN</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="4000">
+                                <img src="./img/tri-hung-window.png" class="d-block d-size" alt="...">
+                                <div class="carousel-caption d-md-block">
+                                    <h5>Трёхстворчатое окно</h5>
+                                    <p>от 480BYN</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./img/window-unit.png" class="d-block d-size" alt="...">
+                                <div class="carousel-caption d-md-block">
+                                    <h5>Балконный блок</h5>
+                                    <p>от 560BYN</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <section class="profiles">
+                <div class="container">
+                    <div class="profiles-items">
+                        <img src="img/kbe.png" alt="" class="item_img ">
+                        <img src="img/salamander-logo.png" alt="" class="item_img">
+                        <img src="img/rehau-logo.png" alt="" class="item_img">
+                        <img src="img/brusBox-logo.png" alt="" class="item_img ">
+                        <img src="img/roto.png" alt="" class="item_img ">
+                    </div>
+                </div>
+            </section>
+
+            <div id="services" class="services">
+                <div class="container">
+                    <div class="services__inner">
+                        <div class="services-title">Предоставляемые услуги</div>
+                        <div data-speed="1.1" class="services__items">
+                            <div class="services__item anim-items anim_no_hide">
+                                <svg width="120" height="120" viewBox="0 0 120 120" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M5.7 15C4.03377 15.6353 3 16.5205 3 17.4997C3 19.4329 7.02944 21 12 21C16.9706 21 21 19.4329 21 17.4997C21 16.5205 19.9662 15.6353 18.3 15M12 9H12.01M18 9C18 13.0637 13.5 15 12 18C10.5 15 6 13.0637 6 9C6 5.68629 8.68629 3 12 3C15.3137 3 18 5.68629 18 9ZM13 9C13 9.55228 12.5523 10 12 10C11.4477 10 11 9.55228 11 9C11 8.44772 11.4477 8 12 8C12.5523 8 13 8.44772 13 9Z"
-                                        stroke="#000000" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
+                                        d="M120 50C120 36.215 108.785 25 95 25H85V20C85 11.73 78.27 5 70 5H60V15H70C72.76 15 75 17.245 75 20V85H10V65H0V95H10.185C10.065 95.825 10 96.655 10 97.5C10 107.15 17.85 115 27.5 115C37.15 115 45 107.15 45 97.5C45 96.655 44.935 95.825 44.815 95H75.185C75.065 95.825 75 96.655 75 97.5C75 107.15 82.85 115 92.5 115C102.15 115 110 107.15 110 97.5C110 96.655 109.935 95.825 109.815 95H120V50ZM35 97.5C35 101.635 31.635 105 27.5 105C23.365 105 20 101.635 20 97.5C20 96.555 20.185 95.72 20.455 95H34.55C34.82 95.72 35 96.555 35 97.5ZM95 35C103.27 35 110 41.73 110 50V55H85V35H95ZM100 97.5C100 101.635 96.635 105 92.5 105C88.365 105 85 101.635 85 97.5C85 96.555 85.185 95.72 85.455 95H99.55C99.82 95.72 100 96.555 100 97.5ZM85 85V65H110V85H85ZM50 15H0V5H50V15ZM40 35H0V25H40V35ZM30 55H0V45H30V55Z"
+                                        fill="" />
                                 </svg>
-                                <h5>г.Минск</h5>
+                                <div class="services__item-text anim-items anim_no_hide">Быстрая доставка</div>
+                            </div>
+                            <div class="services__item anim-items anim_no_hide">
+                                <svg width="120" height="120" viewBox="0 0 120 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M120 92.9289C120 98.2691 117.92 103.289 114.14 107.069L107.07 114.14C103.295 117.92 98.27 120 92.93 120C87.59 120 82.565 117.92 78.785 114.14L65.335 100.689C63.38 98.7341 63.38 95.574 65.335 93.6189C67.29 91.6638 70.45 91.6638 72.405 93.6189L85.855 107.069C89.635 110.85 96.22 110.85 100 107.069L107.07 99.9992C108.96 98.1091 110 95.599 110 92.9289C110 90.2588 108.96 87.7487 107.07 85.8586L97.415 76.1982L90.34 83.2685C88.385 85.2235 85.225 85.2235 83.27 83.2685C81.315 81.3134 81.315 78.1533 83.27 76.1982L93.88 65.5927C95.835 63.6377 98.995 63.6377 100.95 65.5927L114.14 78.7883C117.92 82.5634 120 87.5837 120 92.9289ZM19.31 54.6623C20.285 55.6373 21.565 56.1273 22.845 56.1273C24.125 56.1273 25.405 55.6373 26.38 54.6623C28.335 52.7072 28.335 49.5471 26.38 47.592L12.93 34.1414C11.04 32.2513 10 29.7412 10 27.0711C10 24.401 11.04 21.8909 12.93 20.0008L20 12.9305C23.78 9.15038 30.365 9.15038 34.145 12.9305L43.805 22.5909L36.73 29.6612C34.775 31.6163 34.775 34.7765 36.73 36.7315C38.685 38.6866 41.845 38.6866 43.8 36.7315L54.41 26.1261C55.35 25.186 55.875 23.921 55.875 22.5909C55.875 21.2609 55.35 19.9908 54.41 19.0558L41.215 5.86024C33.66 -1.70507 20.485 -1.70507 12.93 5.85524L5.86 12.9255C2.08 16.7057 0 21.7259 0 27.0661C0 32.4063 2.08 37.4316 5.86 41.2067L19.31 54.6623ZM114.625 31.3413L34.75 111.21C29.09 116.88 21.555 120 13.54 120H5C2.24 120 0 117.765 0 115V106.459C0 98.4441 3.12 90.9138 8.785 85.2486L88.655 5.37022C95.81 -1.78507 107.46 -1.79507 114.62 5.37022C121.775 12.5305 121.775 24.181 114.62 31.3363L114.625 31.3413ZM88.625 43.1968L76.8 31.3713L15.855 92.3189C12.08 96.099 10 101.119 10 106.459V110H13.54C18.885 110 23.905 107.919 27.68 104.139L88.63 43.1918L88.625 43.1968ZM107.55 12.4455C104.29 9.18538 98.99 9.19038 95.725 12.4455L83.87 24.301L95.695 36.1265L107.55 24.271C110.805 21.0109 110.805 15.7057 107.55 12.4455Z"
+                                        fill="" />
+                                </svg>
+
+                                <div class="services__item-text anim-items anim_no_hide">Работа замерщика</div>
+                            </div>
+                            <div class="services__item anim-items anim_no_hide">
+                                <svg width="120" height="120" viewBox="0 0 120 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M91.0004 47.1339L93.2708 42.7636C95.1361 39.1633 95.4761 35.0679 94.2259 31.2126C92.9757 27.3573 90.2903 24.242 86.8548 22.5319L56.0549 5.44545C36.3218 -4.8104 21.4944 1.70014 14.4183 6.49054C11.4329 8.50571 9.78259 11.851 10.0026 15.4363C10.2177 18.9766 12.233 22.0568 15.3835 23.687L35.5067 34.5279L1.55129 98.3182C-2.06428 105.594 0.856181 114.555 8.06732 118.305C10.2377 119.435 12.593 120 14.9634 120C16.5287 120 18.1039 119.755 19.6391 119.255C23.4948 117.995 26.6152 115.3 28.3505 111.794L61.8908 48.7441L70.8772 53.5845C73.0426 54.6896 75.3579 55.2146 77.6483 55.2146C83.0792 55.2146 88.34 52.2594 91.0054 47.1389L91.0004 47.1339ZM19.4541 107.219C18.854 108.429 17.8189 109.324 16.5337 109.744C15.2435 110.164 13.8782 110.054 12.678 109.429C10.2777 108.184 9.30252 105.194 10.4427 102.894L44.313 39.2733L53.0844 43.9987L19.4541 107.219ZM84.3944 38.1532L82.129 42.5235C80.8638 44.9487 77.8433 45.9138 75.523 44.7187L20.0842 14.8612C20.0542 14.8462 20.0592 14.7862 20.0242 14.7712C23.7448 12.251 28.9056 9.98083 35.3716 9.98083C40.0274 9.98083 45.3582 11.1559 51.3242 14.2512L82.194 31.3726C83.3992 31.9777 84.2944 33.0128 84.7144 34.2979C85.1295 35.583 85.0195 36.9481 84.3944 38.1532ZM120 29.9875C120 32.7527 117.765 34.9879 114.999 34.9879H109.998C107.233 34.9879 104.998 32.7527 104.998 29.9875C104.998 27.2223 107.233 24.9871 109.998 24.9871H114.999C117.765 24.9871 120 27.2223 120 29.9875ZM100.262 66.9106C101.967 69.0858 101.587 72.221 99.4067 73.9262C98.4916 74.6462 97.4114 74.9912 96.3313 74.9912C94.846 74.9912 93.3758 74.3312 92.3906 73.0711L88.475 68.0707C86.7697 65.8955 87.1498 62.7602 89.3302 61.0551C91.5005 59.3449 94.641 59.73 96.3463 61.9102L100.262 66.9106ZM114.954 54.9446C114.034 56.5697 112.344 57.4898 110.594 57.4898C109.763 57.4898 108.918 57.2848 108.143 56.8447L103.702 54.3445C101.302 52.9894 100.447 49.9392 101.802 47.534C103.157 45.1388 106.203 44.2687 108.613 45.6338L113.054 48.134C115.454 49.4891 116.309 52.5394 114.954 54.9446Z"
+                                        fill="" />
+                                </svg>
+                                <div class="services__item-text anim-items anim_no_hide">Монтаж за 1 день</div>
+                            </div>
+                            <div class="services__item anim-items anim_no_hide">
+                                <svg width="120" height="120" viewBox="0 0 120 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_125_6)">
+                                        <path
+                                            d="M60 120C26.915 120 0 93.085 0 60C0 26.915 26.915 0 60 0C93.085 0 120 26.915 120 60C120 93.085 93.085 120 60 120ZM60 10C32.43 10 10 32.43 10 60C10 87.57 32.43 110 60 110C87.57 110 110 87.57 110 60C110 32.43 87.57 10 60 10ZM84.11 51.71L79.065 43.075L65 51.29V25H55V68.71L84.11 51.71Z"
+                                            fill="" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_125_6">
+                                            <rect width="120" height="120" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                <div class="services__item-text anim-items anim_no_hide">Быстрое изготовление</div>
                             </div>
                         </div>
                     </div>
-                    <div class="footer__info footer__info-schedule">
-                        <div class="footer__inner-title">График работы</div>
-                        <div class="footer__inner-subtitle">
-                            <div class="sub subtitle_work">
-                                <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px"
-                                    viewBox="0 0 959.999 959.999" xml:space="preserve">
-                                    <g>
-                                        <g>
-                                            <path
-                                                d="M628.833,459.92l67.596-67.596c48.836,19.389,103.95,18.183,152.007-3.614c11.799-5.353,14.622-20.844,5.46-30.006
+                </div>
+            </div>
+
+            <div class="about">
+                <div class="container">
+                    <div class="about__inner">
+                        <div class="about__items">
+                            <div class="about__img">
+                                <img data-speed="1.2" src="./img/about-main-img.jpg" alt="">
+                                <button data-speed="1.15" type="button" class="about_btn">Наши работы</button>
+                            </div>
+                            <div class="about_text_items">
+                                <div data-speed="1.2" class="about__text">
+                                    <div class="about_text_title">О нас</div>
+                                    <div class="about_text_subtitle">
+                                        Мы команда профессионалов, специализирующихся на монтаже и
+                                        демонтаже окон. Наша цель - предоставить высококачественные услуги и
+                                        удовлетворить потребности наших клиентов.<br><br>
+                                        Мы имеем богатый опыт в работе с различными типами оконных конструкций, включая
+                                        <mark>пластиковые</mark> и <mark>алюминиевые</mark> окна. Наша команда обладает
+                                        необходимыми знаниями и
+                                        навыками
+                                        для выполнения сложных монтажных и демонтажных работ.<br>
+
+                                    </div>
+                                </div>
+                                <img src="" alt="">
+                                <div data-speed="0.9" class="about__text--sec_part">
+                                    <div class="about_text_subtitle">
+                                        Мы стремимся к профессионализму во всем, что мы делаем, начиная от точных
+                                        замеров
+                                        оконных проемов до качественной установки. <br><br>
+                                        Свяжитесь с нами сегодня, чтобы получить <mark>бесплатную</mark> консультацию и
+                                        оценку
+                                        для ваших потребностей в монтаже и демонтаже окон.<br><br>
+                                        <mark>Наша главная цель</mark> - это ваша уверенность в качестве
+                                        выполняемых
+                                        работ. Мы
+                                        гарантируем профессионализм, надежность и качество в каждом шаге нашей работы.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="questions">
+                <div class="container">
+                    <div class="questions__inner">
+                        <div class="questions__title">FAQ</div>
+                        <div data-speed="1.1" class="questions__items">
+                            <div class="faq-card "> <!--anim-items anim_no_hide -->
+                                <div class="faq-question">Какие услуги предоставляет ваша компания по установке окон?
+                                </div>
+                                <div class="faq-answer">Наша компания предлагает полный спектр услуг, включая установку
+                                    окон,
+                                    демонтаж старых окон, регулировку оконных конструкций, установку откосов,
+                                    подоконников,
+                                    маскитных сеток и отливов.</div>
+                            </div>
+                            <div class="faq-card ">
+                                <div class="faq-question">Какие основные преимущества монтажа пластиковых окон?</div>
+                                <div class="faq-answer">Монтаж пластиковых окон обеспечивает улучшение тепло- и
+                                    звукоизоляции
+                                    помещения, снижение расходов на отопление и кондиционирование, а также повышение
+                                    безопасности и защиты от взломов.</div>
+                            </div>
+                            <div class="faq-card ">
+                                <div class="faq-question">Какие гарантии вы предоставляете на выполненные работы?</div>
+                                <div class="faq-answer">Мы предоставляем гарантию на выполненные работы и используемые
+                                    материалы. Длительность гарантии зависит от типа работ и выбранного оконного
+                                    профиля.
+                                    Наша
+                                    цель - обеспечить клиентов качественными услугами и долговременной надежностью
+                                    установленных
+                                    окон.</div>
+                            </div>
+                            <div class="faq-card ">
+                                <div class="faq-question">Что такое фурнитура для окон и как выбрать подходящую?</div>
+                                <div class="faq-answer">Фурнитура для окон - это механизмы и комплектующие,
+                                    обеспечивающие
+                                    открывание, закрывание и блокировку окна. При выборе фурнитуры необходимо учитывать
+                                    функциональность, качество и соответствие стандартам безопасности, а также
+                                    удостовериться,
+                                    что она совместима с выбранными оконными профилями. Наша компания специализаруется
+                                    на
+                                    установке ROTO фурнитуры.</div>
+                            </div>
+                            <div class="faq-card ">
+                                <div class="faq-question">Сколько времени обычно занимает монтаж окна?</div>
+                                <div class="faq-answer">Время монтажа окна зависит от сложности работы и размера
+                                    оконного
+                                    проема.
+                                    В среднем, процесс монтажа одного окна может занять от 1 до 2 часов.</div>
+                            </div>
+                            <div class="faq-card ">
+                                <div class="faq-question">Какие факторы влияют на стоимость монтажа окна?</div>
+                                <div class="faq-answer">Стоимость монтажа окна зависит от размеров оконного проема,
+                                    количества
+                                    окон, выбранного типа оконных конструкций, условий работы (сложность доступа, подъем
+                                    на
+                                    веревках и т.д.) и других дополнительных услуг (установка подоконников, отделочные
+                                    работы и
+                                    т.д.).</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer id="contacts" class="footer">
+                <div class="container">
+                    <div class="footer__inner">
+                        <div data-speed=".85" class="footer__items">
+                            <!-- contact FORM -->
+                            <div class="form__inner">
+                                <div class="form_title">оставьте заявку <br>и мы свяжемся с вами </div>
+                                <form>
+                                    <div class="form-group">
+                                        <input type="text" class="form-input form-name" id="form-name" placeholder="">
+                                        <label class="label" for="form-name">*Имя</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-input form-phone" id="form-phone" placeholder="">
+                                        <label class="label" for="form-phone">*Телефон</label>
+                                    </div>
+                                    <button type="submit" class="form-btn" disabled>Отправить</button>
+                                </form>
+                            </div>
+
+                            <!-- CONTACT INFO -->
+                            <div class="contacts_info">
+                                <div class="contacts__info contacts__info-contacts">
+                                    <div class="contacts__inner-title">Контакты</div>
+                                    <div class="contacts__inner-subtitle">
+                                        <div class="sub subtitle_number">
+                                            <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M3 5.5C3 14.0604 9.93959 21 18.5 21C18.8862 21 19.2691 20.9859 19.6483 20.9581C20.0834 20.9262 20.3009 20.9103 20.499 20.7963C20.663 20.7019 20.8185 20.5345 20.9007 20.364C21 20.1582 21 19.9181 21 19.438V16.6207C21 16.2169 21 16.015 20.9335 15.842C20.8749 15.6891 20.7795 15.553 20.6559 15.4456C20.516 15.324 20.3262 15.255 19.9468 15.117L16.74 13.9509C16.2985 13.7904 16.0777 13.7101 15.8683 13.7237C15.6836 13.7357 15.5059 13.7988 15.3549 13.9058C15.1837 14.0271 15.0629 14.2285 14.8212 14.6314L14 16C11.3501 14.7999 9.2019 12.6489 8 10L9.36863 9.17882C9.77145 8.93713 9.97286 8.81628 10.0942 8.64506C10.2012 8.49408 10.2643 8.31637 10.2763 8.1317C10.2899 7.92227 10.2096 7.70153 10.0491 7.26005L8.88299 4.05321C8.745 3.67376 8.67601 3.48403 8.55442 3.3441C8.44701 3.22049 8.31089 3.12515 8.15802 3.06645C7.98496 3 7.78308 3 7.37932 3H4.56201C4.08188 3 3.84181 3 3.63598 3.09925C3.4655 3.18146 3.29814 3.33701 3.2037 3.50103C3.08968 3.69907 3.07375 3.91662 3.04189 4.35173C3.01413 4.73086 3 5.11378 3 5.5Z"
+                                                    stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <h5>+375(33) 301-28-71</h5>
+                                        </div>
+                                        <div class="sub subtitle_city">
+                                            <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M5.7 15C4.03377 15.6353 3 16.5205 3 17.4997C3 19.4329 7.02944 21 12 21C16.9706 21 21 19.4329 21 17.4997C21 16.5205 19.9662 15.6353 18.3 15M12 9H12.01M18 9C18 13.0637 13.5 15 12 18C10.5 15 6 13.0637 6 9C6 5.68629 8.68629 3 12 3C15.3137 3 18 5.68629 18 9ZM13 9C13 9.55228 12.5523 10 12 10C11.4477 10 11 9.55228 11 9C11 8.44772 11.4477 8 12 8C12.5523 8 13 8.44772 13 9Z"
+                                                    stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <h5>г.Минск</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contacts__info contacts__info-schedule">
+                                    <div class="contacts__inner-title">График работы</div>
+                                    <div class="contacts__inner-subtitle">
+                                        <div class="sub subtitle_work">
+                                            <svg fill="#000000" version="1.1" id="Capa_1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px"
+                                                viewBox="0 0 959.999 959.999" xml:space="preserve">
+                                                <g>
+                                                    <g>
+                                                        <path
+                                                            d="M628.833,459.92l67.596-67.596c48.836,19.389,103.95,18.183,152.007-3.614c11.799-5.353,14.622-20.844,5.46-30.006
                     L733.52,238.329c-14.625-14.625-14.625-38.338,0-52.963L853.771,65.114c9.221-9.222,6.385-24.827-5.497-30.203
                     C776.762,2.554,689.668,15.763,630.885,74.545c-55.213,55.212-70.079,135.975-44.618,204.958l-68.926,68.926L628.833,459.92z" />
-                                            <path d="M499.665,366.106l-93.414-93.414L294.76,384.184l93.414,93.414l111.49,111.491l341.527,341.527
+                                                        <path d="M499.665,366.106l-93.414-93.414L294.76,384.184l93.414,93.414l111.49,111.491l341.527,341.527
                     c4.877,4.877,11.271,7.316,17.662,7.316c6.393,0,12.785-2.439,17.662-7.316l76.166-76.166c9.755-9.756,9.755-25.57,0-35.324
                     L611.155,477.598L499.665,366.106z" />
-                                            <path d="M904.345,127.995l-99.869,99.869c-7.984,7.984-7.984,20.93,0,28.914l76.972,76.972c8.594,8.593,22.826,7.907,30.371-1.619
+                                                        <path d="M904.345,127.995l-99.869,99.869c-7.984,7.984-7.984,20.93,0,28.914l76.972,76.972c8.594,8.593,22.826,7.907,30.371-1.619
                     c45.178-57.037,53.729-133.579,25.659-198.004C931.75,120.981,914.483,117.855,904.345,127.995z" />
-                                            <path d="M139.613,601.295L259.988,721.67c14.625,14.625,14.625,38.338,0,52.963L139.737,894.885
+                                                        <path d="M139.613,601.295L259.988,721.67c14.625,14.625,14.625,38.338,0,52.963L139.737,894.885
                     c-9.221,9.221-6.385,24.828,5.497,30.203c71.512,32.355,158.606,19.148,217.39-39.635
                     c55.014-55.014,69.968-135.395,44.888-204.213l74.476-74.475l-111.489-111.49l-72.694,72.693
                     c-49.015-19.688-104.434-18.584-152.729,3.322C133.274,576.641,130.452,592.135,139.613,601.295z" />
-                                            <path d="M81.69,629.866c-45.177,57.037-53.728,133.58-25.659,198.004c5.727,13.146,22.994,16.271,33.133,6.133l99.869-99.869
+                                                        <path d="M81.69,629.866c-45.177,57.037-53.728,133.58-25.659,198.004c5.727,13.146,22.994,16.271,33.133,6.133l99.869-99.869
                     c7.984-7.984,7.984-20.93,0-28.914l-76.972-76.971C103.468,619.655,89.235,620.34,81.69,629.866z" />
-                                            <path d="M138.849,461.443c11.956,11.956,31.339,11.956,43.295,0l5.772-5.772c11.956-11.955,11.956-31.339,0-43.294l-11.545-11.545
+                                                        <path d="M138.849,461.443c11.956,11.956,31.339,11.956,43.295,0l5.772-5.772c11.956-11.955,11.956-31.339,0-43.294l-11.545-11.545
                     l22.731-22.73L92.309,271.308l-22.73,22.73l-11.545-11.545c-11.956-11.955-31.339-11.955-43.295,0l-5.772,5.773
                     c-11.956,11.956-11.956,31.339,0,43.294L138.849,461.443z" />
-                                            <path d="M304.036,65.967l105.457,105.457c121.583-81.009,189.546-13.059,96.078-106.526
+                                                        <path d="M304.036,65.967l105.457,105.457c121.583-81.009,189.546-13.059,96.078-106.526
                     C440.93,0.256,359.305,30.842,304.036,65.967z" />
-                                            <path d="M271.62,68.906c-5.978-5.978-13.812-8.967-21.647-8.967s-15.67,2.989-21.647,8.967L98.441,198.79
+                                                        <path d="M271.62,68.906c-5.978-5.978-13.812-8.967-21.647-8.967s-15.67,2.989-21.647,8.967L98.441,198.79
                     c-11.956,11.955-11.956,31.339,0,43.295l11.545,11.545l106.793,106.793l11.545,11.545c5.978,5.978,13.812,8.967,21.647,8.967
                     c1.894,0,3.788-0.179,5.655-0.528c4.374-0.817,8.603-2.592,12.352-5.324c1.272-0.929,2.491-1.965,3.64-3.113l5.462-5.462
                     l111.49-111.491l8.838-8.838l4.094-4.093c1.631-1.631,3.031-3.405,4.218-5.275c7.507-11.836,6.105-27.696-4.218-38.02
                     l-12.571-12.571L283.044,80.33L271.62,68.906z" />
-                                        </g>
-                                    </g>
-                                </svg>
-                                <h5>Пн-Пт с 9:00 до 19:00</h5>
-                            </div>
-                            <div class="sub subtitle_holiday">
-                                <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"
-                                    xml:space="preserve">
-                                    <style type="text/css">
-                                        .st0 {
-                                            fill: #000000;
-                                        }
-                                    </style>
-                                    <g>
-                                        <polygon class="st0" points="0.682,68.727 78.721,68.727 0,167.707 0,184.835 151.173,184.835 151.173,139.892 76.551,139.892 
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <h5>Пн-Пт с 9:00 до 19:00</h5>
+                                        </div>
+                                        <div class="sub subtitle_holiday">
+                                            <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"
+                                                xml:space="preserve">
+                                                <style type="text/css">
+                                                    .st0 {
+                                                        fill: #000000;
+                                                    }
+                                                </style>
+                                                <g>
+                                                    <polygon class="st0" points="0.682,68.727 78.721,68.727 0,167.707 0,184.835 151.173,184.835 151.173,139.892 76.551,139.892 
                 152.882,43.926 152.882,23.783 0.682,23.783 	" />
-                                        <polygon class="st0" points="180.246,220.417 258.285,220.417 179.554,319.398 179.554,336.527 330.727,336.527 330.727,291.583 
+                                                    <polygon class="st0" points="180.246,220.417 258.285,220.417 179.554,319.398 179.554,336.527 330.727,336.527 330.727,291.583 
                 256.105,291.583 332.436,195.608 332.436,175.474 180.246,175.474 	" />
-                                        <polygon class="st0" points="512,327.165 359.8,327.165 359.8,372.109 437.839,372.109 359.118,471.089 359.118,488.217 
+                                                    <polygon class="st0" points="512,327.165 359.8,327.165 359.8,372.109 437.839,372.109 359.118,471.089 359.118,488.217 
                 510.281,488.217 510.281,443.274 435.669,443.274 512,347.308 	" />
-                                    </g>
-                                </svg>
-                                <h5>Сб,Вс - выходной</h5>
+                                                </g>
+                                            </svg>
+                                            <h5>Сб,Вс - выходной</h5>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </footer>
         </div>
-    </footer>
-
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
