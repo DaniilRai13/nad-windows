@@ -50,6 +50,7 @@
             margin: 0 !important;
             bottom: 60px;
 
+
             @media (max-width: 900px) {
                 bottom: 25px;
             }
@@ -62,9 +63,15 @@
                 bottom: -30px;
             }
 
-            .carousel-indicators [data-bs-target] {
-                background-color: #000 !important;
+            button {
+                background-color: #dcdcdc;
+                border: 1px solid #000;
+
+                &.active {
+                    background-color: #2f2f2f;
+                }
             }
+
         }
 
         .carousel-inner {
