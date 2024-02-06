@@ -153,6 +153,56 @@
                     }
                 }
             }
+
+            .loader__inner {
+                display: flex;
+                justify-content: center;
+
+                .loader__text {
+                    font-size: 30px;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    color: beige;
+                }
+
+                .loader-dots {
+                    display: flex;
+                    margin-left: 30px;
+
+                    .loader-dot {
+                        font-size: 40px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        color: aliceblue;
+                        animation: bounce 1s ease-in-out infinite;
+                        column-gap: 5px;
+
+                        &:first-child {
+                            animation-delay: 0.7s;
+                        }
+
+                        &:nth-child(2) {
+                            animation-delay: 0.3s;
+                        }
+
+                        &:nth-child(3) {
+                            animation-delay: 0s;
+                        }
+                    }
+                }
+
+                @keyframes bounce {
+                    0% {
+                      transform: translateY(0px);
+                    }
+                  
+                    50% {
+                      transform: translateY(-5px);
+                    }
+                  
+                    100% {
+                      transform: translateY(0px);
+                    }
+                  }
+            }
         }
 
         .our-works__load-more {
