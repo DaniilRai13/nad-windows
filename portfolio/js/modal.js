@@ -1,10 +1,13 @@
-const items = worksContainer.querySelectorAll('.our-works__item')
+const itemsInner = document.querySelector('.our-works__items')
+// console.log(items)
 const modal = document.querySelector('.modal')
 // window.addEventListener('click', (e) => {
 //     console.log(e.target)
 // })
-items.forEach(item => {
-    item.addEventListener('click', (e) => {
+
+itemsInner.addEventListener('click', (e) => {
+    if (e.target.dataset.id) {
+        console.log(e.target.dataset.id)
         modal.innerHTML = createModalWindow()
         setImgs(e.target.dataset.id)
         showModal()
@@ -16,14 +19,16 @@ items.forEach(item => {
         leftArrow.addEventListener('click', () => changeImg('prev'))
         rightArrow.addEventListener('click', () => changeImg('next'))
         modalContainer.addEventListener('click', (e) => {
-            
+
             if (e.target.classList.contains('modal__container')) {
                 closeModal()
             }
         })
+    }
 
-    })
 })
+
+
 
 function changeImg(type) {
     const modalImgsContainer = modal.querySelector('.modal__imgs')
@@ -39,20 +44,26 @@ function changeImg(type) {
     }
 }
 
-function setImgs(id) {
+function setImgs(getId) {
     const modalImgsContainer = modal.querySelector('.modal__imgs')
-
-    let a = worksData
-        .filter(item => {
-            if (item.id === +id) {
-                return item.popUpImgs
-            }
-        })
-
-    a[0].popUpImgs.forEach(item => {
+    let a = [];
+    for (let id in worksData) {
+        if (id == getId) {
+            a = worksData[id].images
+        }
+    }
+    // let a = worksData
+    //     .filter(item => {
+    //         if (item.id === +id) {
+    //             return item.popUpImgs
+    //         }
+    //     })
+    console.log(a)
+    a.forEach(item => {
+        console.log(item)
         let imgDiv = document.createElement('img')
         imgDiv.classList.add('modal__img-item')
-        imgDiv.src = item
+        imgDiv.src = item.url
         modalImgsContainer.appendChild(imgDiv)
     })
 
