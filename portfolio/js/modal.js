@@ -1,13 +1,9 @@
 const itemsInner = document.querySelector('.our-works__items')
-// console.log(items)
+
 const modal = document.querySelector('.modal')
-// window.addEventListener('click', (e) => {
-//     console.log(e.target)
-// })
 
 itemsInner.addEventListener('click', (e) => {
     if (e.target.dataset.id) {
-        console.log(e.target.dataset.id)
         modal.innerHTML = createModalWindow()
         setImgs(e.target.dataset.id)
         showModal()
@@ -52,13 +48,7 @@ function setImgs(getId) {
             a = worksData[id].images
         }
     }
-    // let a = worksData
-    //     .filter(item => {
-    //         if (item.id === +id) {
-    //             return item.popUpImgs
-    //         }
-    //     })
-    console.log(a)
+
     a.forEach(item => {
         console.log(item)
         let imgDiv = document.createElement('img')
