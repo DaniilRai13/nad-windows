@@ -12,8 +12,7 @@ async function render() {
     try {
         worksContainer.innerHTML = loaderHTML()
         await getWorks()
-            .then(data => worksData = data )
-
+            .then(data => worksData = data)
         worksContainer.innerHTML = ''
         await drawInitWorks()
     } catch (err) {
@@ -37,12 +36,7 @@ function showMore() {
 }
 
 async function drawInitWorks() {
-    // for (let i = 0; i < 6; i++) {
-    //     drawBlock(worksData[i]);
-    // }
-
     for (let id in worksData) {
-        console.log(worksData[id].mainImg)
         drawBlock(id, worksData[id].mainImg);
     }
 
@@ -66,14 +60,9 @@ function drawBlock(id, mainImg, title = 'window') {
 }
 
 async function getWorks() {
-    loaderHTML()
+    // loaderHTML()
 
-    return fetch('https://nad-works-default-rtdb.firebaseio.com/works.json', {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
+    return fetch("https://nad-works-default-rtdb.firebaseio.com/works.json?orderBy=\"$key\"&startAt=\"" + 3 + "\"&limitToFirst=4")
         .then(res => res.json())
         .then(data => data)
 }
